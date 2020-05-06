@@ -45,27 +45,9 @@ func parseString(value string) (int, error) {
 	return result, err
 }
 
-func readInput() string {
+// ReadInput returns an string from the input
+func ReadInput() string {
 	scanner := bufio.NewScanner(os.Stdin)
 	scanner.Scan()
 	return scanner.Text()
-}
-
-func proccessResult(input string, operation string) {
-	c := calc{}
-	result, err := c.operate(input, operation)
-	if err != nil {
-		fmt.Println(err)
-	} else {
-		fmt.Println("Result of", input, "equals to", result)
-	}
-
-}
-
-func main() {
-	fmt.Println("Enter your input")
-	input := readInput()
-	fmt.Println("Enter your operation")
-	operation := readInput()
-	proccessResult(input, operation)
 }
