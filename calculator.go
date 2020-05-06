@@ -8,9 +8,11 @@ import (
 	"strings"
 )
 
-type calc struct{}
+// Calc is a general type
+type Calc struct{}
 
-func (c calc) operate(input string, operation string) (int, error) {
+// Operate returns an integer base on the operation
+func (c Calc) Operate(input string, operation string) (int, error) {
 	values := strings.Split(input, operation)
 	fistNumber, err := parseString(values[0])
 	if err != nil {
